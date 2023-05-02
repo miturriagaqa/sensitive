@@ -14,6 +14,6 @@ resource "aws_instance" "example" {
 }
 
 data "template_file" "init" {
-  template = file("${path.module}/init.sh")
+  template = file("${path.module}/init.sh") }
 
 
