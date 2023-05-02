@@ -12,10 +12,6 @@ output "message" {
   value = "Your deployment is complete."
 }
 
-{
-  "my_secret_key": "supersecretkey"
-}
-
 variable "my_secret_key" {
   type    = string
   default = "defaultsecretkey"
