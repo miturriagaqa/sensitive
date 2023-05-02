@@ -11,3 +11,8 @@ output "password" {
 output "message" {
   value = "Your deployment is complete."
 }
+
+{
+  "my_secret_key": "supersecretkey"
+}
+
