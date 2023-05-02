@@ -16,9 +16,4 @@ resource "aws_instance" "example" {
 data "template_file" "init" {
   template = file("${path.module}/init.sh")
 
-  vars = {
-    # Variables used in the script
-    region = var.region
-  }
-}
 
