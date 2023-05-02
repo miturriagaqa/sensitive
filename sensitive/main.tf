@@ -4,17 +4,17 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-resource "aws_instance" "example" {
+resource "aws_ssm_parameter" "example" {
   ami           = "ami-0b301ce3ce347599c"
   instance_type = "t2.micro"
+  name  = "example_parameter"
+  type  = "SecureString"
+  value = "super_secret_password"
+  tags  = {
+    Environment = "production"
+  }
 
-  # Sensitive attribute set to true
-  user_data = base64encode(data.template_file.init.rendered)
+  # Set sensitive to true to mask the parameter value in Terraform output and logs
   sensitive = true
 }
-
-data "template_file" "init" {
-  template = file("${path.module}/init.sh") 
-}
-
 
