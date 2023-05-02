@@ -16,3 +16,12 @@ output "message" {
   "my_secret_key": "supersecretkey"
 }
 
+variable "my_secret_key" {
+  type    = string
+  default = "defaultsecretkey"
+}
+
+output "secret_key_output" {
+  value     = var.my_secret_key
+  sensitive = true
+}
