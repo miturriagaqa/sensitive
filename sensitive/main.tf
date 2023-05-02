@@ -14,5 +14,4 @@ output "message" {
 
 output "secret_key_output" {
   value     = var.my_secret_key
-  sensitive = true
 }
